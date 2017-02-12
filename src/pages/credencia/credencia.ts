@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { BarcodeScanner } from 'ionic-native';
 
 import { CredenciaDetalhesPage } from './../credencia-detalhes//credencia-detalhes';
 
@@ -19,7 +20,7 @@ export class CredenciaPage {
   public resultado = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.getParticipantes();
 
     this.resultado = this.participantes;
@@ -747,7 +748,6 @@ export class CredenciaPage {
 }
 
 detalhes(item){
-  console.log(item);
   this.navCtrl.push(CredenciaDetalhesPage, item);
 }
 
@@ -756,6 +756,27 @@ puxando_atualizando(evento){
   this.resultado = this.participantes;
 
   evento.complete();
+}
+
+leitura_qrcode(){
+  console.log('leitura');
+
+  BarcodeScanner.scan({
+    prompt : "Coloque o QR Code dentro da area demarcada", // Android
+    })
+    .then((barcodeData) => {
+      if(barcodeData.text !=''){
+          let alert = this.alertCtrl.create({
+               subTitle: barcodeData.text ,
+               buttons: ['OK']
+             });
+             alert.present();
+       }
+   // Success! Barcode data is here
+  }, (err) => {
+    console.log(err);
+
+  });
 }
 
   //ionViewDidLoad() {
