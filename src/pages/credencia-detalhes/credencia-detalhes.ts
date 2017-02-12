@@ -21,20 +21,18 @@ export class CredenciaDetalhesPage {
                 };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(navParams);
     this.dados.nome = this.navParams.get('nome');
     this.dados.id = this.navParams.get('id');
     this.dados.cpf = this.navParams.get('cpf');
     this.dados.email = this.navParams.get('email');
     this.dados.presenca = this.navParams.get('presenca') == 'Presente' ? 'Presente' : 'Não presente';
-
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CredenciaDetalhesPage');
   }
 
-  fazendo_checkin(id){
+  fazer_checkin(id){
 
   }
 

@@ -751,6 +751,13 @@ detalhes(item){
   this.navCtrl.push(CredenciaDetalhesPage, item);
 }
 
+puxando_atualizando(evento){
+  this.getParticipantes();
+  this.resultado = this.participantes;
+
+  evento.complete();
+}
+
   //ionViewDidLoad() {
   //  console.log('ionViewDidLoad CredenciaPage');
   //}

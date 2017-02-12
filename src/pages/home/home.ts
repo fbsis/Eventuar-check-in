@@ -13,7 +13,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
     //se ele ja estiver logado, vamos para cá.
-    this.navCtrl.setRoot(CredenciaPage);
+    //this.navCtrl.setRoot(CredenciaPage);
 
   }
 
