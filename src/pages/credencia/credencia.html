@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+       <ion-icon name="menu"></ion-icon>
+     </button>
+
+    <ion-title>Credenciamento</ion-title>
+  </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="qr-scanner"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+  <ion-list>
+    <button ion-item *ngFor="let item of resultado" (click)='detalhes(item)'>
+      {{ item.nome }}
+      <small>{{ item.email }}</small>
+    </button >
+  </ion-list>
+
+
+
+
+</ion-content>

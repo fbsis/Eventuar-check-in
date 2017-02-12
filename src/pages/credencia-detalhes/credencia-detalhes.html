@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>Participante</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-item>
+    <div item-left>Nome</div>
+    <div item-right>{{dados.nome}}</div>
+  </ion-item>
+    <ion-item>
+      <div item-left>Id</div>
+      <div item-right>{{dados.id}}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left>E-mail</div>
+      <div item-right>{{dados.email}}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left>CPF</div>
+      <div item-right>{{dados.cpf}}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left>Presença</div>
+      <div item-right>{{dados.presenca}}</div>
+    </ion-item>
+
+
+  <button ion-button block end (click)='fazendo_checkin(dados.id)'>Fazer check-in do participante</button>
+
+</ion-content>

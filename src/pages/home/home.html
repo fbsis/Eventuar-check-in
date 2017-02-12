@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+
+
+    <ion-title>
+      Check-in
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col text-center>
+      <ion-img   src="../../assets/logo.png" width='159px' height='27px' cache='true'></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <p text-center>Faça o login no seu evento, fornecendo o token de acesso que se encontra no Eventuar.</p>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Token de acesso</ion-label>
+      <ion-input type="text" value=""  [(ngModel)]="token" ></ion-input>
+
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Logar automaticamente</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <button ion-button block (click)='logar()' >Logar</button>
+    </ion-item>
+    <p text-center>Se não souber o token do seu evento, entre em contato com o organizador.</p>
+
+  </ion-list>
+</ion-content>
